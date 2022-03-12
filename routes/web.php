@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+use app\Http\Controllers\EventController;
 
-   
-});
+Route::get('/', [EventController::class, 'index']);
 
 Route::get('/contact', function () {
     return view('contact');
