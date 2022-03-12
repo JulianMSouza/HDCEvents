@@ -27,7 +27,7 @@
                         <a href="/" class="nav-link">Eventos</a>
                     </li>
                     <li class="navitem">
-                        <a href="/" class="nav-link">Criar eventos</a>
+                        <a href="/events/create" class="nav-link">Criar eventos</a>
                     </li>
                     <li class="navitem">
                         <a href="/" class="nav-link">Entrar</a>

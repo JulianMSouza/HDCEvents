@@ -24,7 +24,7 @@ class EventController extends Controller
     }
 
     //Action para requisição get do formulário - solicitação da página, para retornar a view disponibilizada para o usuário.
-    public function create(){
+    public function create(){       
         return view('events.create');
     }
 

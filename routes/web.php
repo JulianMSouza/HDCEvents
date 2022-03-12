@@ -17,7 +17,7 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
 //Nova rota para o método create da nova controller  EventController
-Route::get('/event/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create']);
 
 Route::get('/contact', function () {
     return view('contact');
