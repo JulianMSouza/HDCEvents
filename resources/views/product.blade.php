@@ -6,4 +6,5 @@
 
 <h1>Exibindo o produto {{ $id }}</h1>
 
+
 @endsection

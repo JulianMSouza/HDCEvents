@@ -4,23 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;
+
 class EventController extends Controller
 {
     public function index(){
-        $nome = "Julian";
-        $idade = "35";
+        $events = "";
     
-        $array = [10,20,30,40,50];
-    
-        $nomes = ["Matheus", "Maria", "Joao", "Saulo"];
-    
-        return view('welcome', 
-                [   
-                    'nome' => $nome, 
-                    'idade' => $idade,
-                    'array' =>$array,
-                    'nomes' => $nomes
-                ]);
+        return view('welcome', []);
     }
 
     //Action para requisição get do formulário - solicitação da página, para retornar a view disponibilizada para o usuário.
