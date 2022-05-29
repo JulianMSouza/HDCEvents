@@ -4,45 +4,39 @@
 
 @section('content')
 
+<div id="search-container"  class="col-md-12">
+    <h1> Busque um evento</h1>
+    <form action=""> 
+        <input type="text" id="search" name="search" class="form-control" placeholder="procurar">
+    </form>
 
-        <h1>Algum texto</h1>
+</div>
+<div id="search-container"  class="col-md-12">
+    <h2> Próximos Eventos</h2>
+    <p>Veja os eventos dos próximos dias </p>
+    
+    <div id="cards-container"  class="row"> 
+    @foreach($events as $event)
 
-    <img src="/img/bannerfesta.jpg"  alt="Banner"
+        <p> {{ $event->title}}  -- {{ $event->description }}</p>
 
-            @if(10 > 5)
-            <p>A condicao é true </p>
-            @endif
 
-            <p> {{ $nome }}  </p>
-           
-            
-            <p>"O nome é {{$nome}} e idade é {{$idade}} </p> 
+    @endforeach
+    </div>
+    
+    
 
-            @if($nome == "pedro")
-            <p> É pedro</p>
-            @else
-            <p> É Matheus</p>
-            @endif
-            
-            
-            @for($i = 0; $i < count($array); $i++)
-                <p>{{$array[$i]}} - {{$i}}</p>
+</div>
 
-            @endfor
+</div>
 
-            @foreach($nomes as $nome)
-            <p>{{$loop->index}}</p>
-            <p>{{$nome}}</p>
 
-            @endforeach
+@foreach($events as $event)
 
-            @php
-            $name = "joão";
-            echo $name;
-            @endphp
+<p> {{ $event->title}}  -- {{ $event->description }}</p>
 
-            <!-- Comentario que aparece na view, se inspecionar os elementos  -->
-            {{-- Comentario que não aparece na view.forma correta de utilizar --}}
+
+@endforeach
 
 
 

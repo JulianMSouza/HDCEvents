@@ -9,9 +9,14 @@ use App\Models\Event;
 class EventController extends Controller
 {
     public function index(){
-        $events = "";
+        
+
+       //Chama todos eventos da tabela events no mysql
+        $events = Event::all();
     
-        return view('welcome', []);
+
+
+        return view('welcome', ['events' => $events]);
     }
 
     //Action para requisição get do formulário - solicitação da página, para retornar a view disponibilizada para o usuário.
