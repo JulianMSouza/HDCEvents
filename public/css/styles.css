@@ -54,18 +54,18 @@ header{
     
 }
 
-/*Search Container  */
+/*Search Container */
 #search-container{
-    background-image: url("../img/banner2.jpg");
+    background-image: url("../img/Festa3.jpg");
     background-size: cover;
     background-position: center;
-    height: 200px;
+    height: 300px;
     padding: 50px;
     text-align: center; 
 }
 
 
-#search-container h2{
+#search-container h1{
     color: #F2A340;
     margin-bottom: 30px;
     font-weight: 900;

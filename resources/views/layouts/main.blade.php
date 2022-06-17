@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-                <img src="/img/Festa3.jpg" alt="HDC Events">
+               <!-- <img src="/img/Festa3.jpg" alt="HDC Events"> -->
                 </a>
                 <ul class="navbar nav">
                     <li class="navitem">
@@ -41,7 +41,7 @@
 
             </div>
         </nav>
-    </reader>
+    </header>
     @yield('content')
        <footer>
            <p>HDC Events &copy; 2020</p>
