@@ -24,6 +24,7 @@ class EventController extends Controller
         return view('events.create');
     }
 
+    //Action para salvar o evento do  formulário recebido via post.
     public function store(Request $request) {
 
         $event = new Event;

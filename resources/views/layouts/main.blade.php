@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-               <!-- <img src="/img/Festa3.jpg" alt="HDC Events"> -->
+                <img src="/img/logotipo.jpg" alt="HDC Events">
                 </a>
                 <ul class="navbar nav">
                     <li class="navitem">
