@@ -20,6 +20,7 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']);
 //Nova rota para o método create da nova controller  EventController
 Route::get('/events/create', [EventController::class, 'create']);
+//Nova rota para o método salvar da  controller  EventController
 Route::post('/events', [EventController::class, 'store']);
 
 Route::get('/contact', function () {
