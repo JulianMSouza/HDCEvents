@@ -55,6 +55,6 @@
        <footer>
            <p>HDC Events &copy; 2020</p>
        </footer>
-       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
 </html>
