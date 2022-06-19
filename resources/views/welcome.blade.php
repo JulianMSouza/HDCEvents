@@ -11,34 +11,22 @@
     </form>
 
 </div>
-<div id="events-container"  class="col-md-12">
-    <h2> Próximos Eventos</h2>
-    <p class="subtitle">Veja os eventos dos próximos dias </p>
-    
-    <div id="cards-container"  class="row"> 
-    @foreach($events as $event)
+<div id="events-container" class="col-md-12">
+    <h2>Próximos Eventos</h2>
+    <p class="subtitle">Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
         <div class="card col-md-3">
-            <img src="/img/Festa2.jpg" alt="{{ $event->title }}">
+            <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
             <div class="card-body">
-                <p class="card-date">10/09/2020 </p>
-                <h5 class="card-title">{{ $event->title }} </h5>
-                <p class="card-participants">X participantes </p>
-                <a href="#"  class="btn btn-primary">Saber mais </a>
-
-
-
+                <p class="card-date">10/09/2020</p>
+                <h5 class="card-title">{{ $event->title }}</h5>
+                <p class="card-participants">X Participantes</p>
+                <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
             </div>
-
-
         </div>
-    
-
-
-    @endforeach 
+        @endforeach
     </div>
-    
-    
-
 </div>
 
 @endsection
