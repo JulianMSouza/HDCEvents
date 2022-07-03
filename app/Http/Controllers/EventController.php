@@ -11,13 +11,24 @@ class EventController extends Controller
 {
     public function index(){
         
+        $search = request('search');
+        if($search){
+          
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
 
-       //Chama todos eventos da tabela events no mysql
-        $events = Event::all();
+        }else{
+            //Chama todos eventos da tabela events no mysql
+            $events = Event::all();
+        }
+        
+
+       
     
 
 
-        return view('welcome', ['events' => $events]);
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
     //Action para requisição get do formulário - solicitação da página, para retornar a view disponibilizada para o usuário.
