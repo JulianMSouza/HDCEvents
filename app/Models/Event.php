@@ -14,4 +14,5 @@ class Event extends Model
     ];
 
     protected $dates = ['date'];
+
 }
