@@ -13,19 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
-//Nova rota para o método create da nova controller  EventController
 Route::get('/events/create', [EventController::class, 'create']);
 Route::get('/events/{id}', [EventController::class, 'show']);
-//Nova rota para o método salvar da  controller  EventController
 Route::post('/events', [EventController::class, 'store']);
-
 
 Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
