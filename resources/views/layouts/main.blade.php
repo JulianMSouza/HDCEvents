@@ -31,6 +31,7 @@
                 <a href="/events/create" class="nav-link">Criar Eventos</a>
               </li>
               @auth
+              <!--Diretivas para usuário AUTENTICADO   -->
               <li class="nav-item">
                 <a href="/dashboard" class="nav-link">Meus eventos</a>
               </li>
@@ -47,6 +48,7 @@
               </li>
               @endauth
               @guest
+              <!--Diretivas para usuário Não autenticado   -->
               <li class="nav-item">
                 <a href="/login" class="nav-link">Entrar</a>
               </li>
