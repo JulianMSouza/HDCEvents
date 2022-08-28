@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\User;
 use Carbon\Carbon;
 
 class EventController extends Controller
@@ -78,8 +79,10 @@ class EventController extends Controller
     public function show($id){     
         
         $event = Event::findOrFail($id);
+        //acesso à entidade User e consequentemente aos dados relativos para manipular.
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.show', ['event' => $event]);
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
         
     }
 
