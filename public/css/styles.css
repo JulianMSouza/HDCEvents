@@ -208,9 +208,16 @@ header {
   width: 25%;
 }
 
+
 .dashboard-events-container form{
   display:inline-block;
 }
+
+/* edit page*/
+.img-preview{  
+  height: 75px;
+}
+
 
 /* footer */
 footer {
