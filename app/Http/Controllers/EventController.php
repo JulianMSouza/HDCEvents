@@ -51,26 +51,18 @@ class EventController extends Controller
        
          // Image Upload
          if($request->hasFile('image') && $request->file('image')->isValid()) {
-
             $requestImage = $request->image;
-
             $extension = $requestImage->extension();
             //Cria uma hash única concatenando o nome do arquivo e a data/hora do upload.
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
             $requestImage->move(public_path('img/events'), $imageName);
-
             $event->image = $imageName;
-
         }
 
         $user = auth()->user();
         $event->user_id = $user->id;
-
-
-
         $event->save();
-
         return redirect('/')->with('msg', 'Evento criado com sucesso!');
 
     }
@@ -98,6 +90,36 @@ class EventController extends Controller
     public function destroy($id){
         Event::findOrFail($id)->delete();
         return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
+    }
+
+    public function edit($id){
+
+        
+        $event = Event::findOrFail($id);
+
+        return view('events.edit', ['event' => $event]);
+
+    }
+
+    public function update(Request $request){
+
+        $data = $request->all();
+         // Image Upload
+         if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            //Cria uma hash única concatenando o nome do arquivo e a data/hora do upload.
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        //$request->all() ->Para atualizar todos os dados recebidos.
+        Event::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Evento atualizado com sucesso!');
+
     }
 
 }
