@@ -128,7 +128,9 @@ class EventController extends Controller
 
         $event = Event::findOrFail($id);
 
-        return redirect('/dachboard')->with('msg', 'Sua presença foi confirmada no evento ' . $event->title );
+
+
+        return redirect('/dashboard')->with('msg', 'Sua presença foi confirmada no evento ' . $event->title );
     }
 
 }
