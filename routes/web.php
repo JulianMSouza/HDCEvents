@@ -32,6 +32,8 @@ Route::get('/contact', function () {
 //Aqui foi alterada o controle de view para a controller de eventos.
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
+Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
+
 //Será excluído pois usaremos uma nova rota para depois do login de usuário dentro de events.
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
