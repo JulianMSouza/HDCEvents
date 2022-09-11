@@ -83,7 +83,17 @@ class EventController extends Controller
         //Mapeamento de eventos por usuário já existe na model Models\User.
         $events = $user->events;
 
-        return view('events.dashboard', ['events' => $events]);
+        
+
+        //Chamada da action/método eventAsParticipant da model user que já contém os dados.
+        $eventAsParticipants = $user->eventAsParticipant;
+
+        
+        
+
+        return view('events.dashboard', ['events' => $events,
+                     'eventsasparticipants' => $eventAsParticipants
+        ]);
 
     }
 
@@ -94,10 +104,18 @@ class EventController extends Controller
 
     public function edit($id){
 
-        
+        $user = auth()->user();
+
         $event = Event::findOrFail($id);
 
-        return view('events.edit', ['event' => $event]);
+        //Só permite abrir edicao de evento se for o proprietario do evento.
+        if ($user->id = $event->user_id){            
+            return redirect('/dashboard')->with('msg', 'Evento não pode ser alterado!');
+        }
+        else{
+            return view('events.edit', ['event' => $event]);
+        }
+        
 
     }
 
