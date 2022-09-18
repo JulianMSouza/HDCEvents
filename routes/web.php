@@ -38,3 +38,5 @@ Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middlew
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 //})->name('dashboard');
+
+Route::delete('/events/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
