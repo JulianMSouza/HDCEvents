@@ -116,14 +116,14 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-                    <span class="ml-2 text-sm text-gray-600"><?php echo e(__('Remember me')); ?></span>
+                    <span class="ml-2 text-sm text-gray-600"><?php echo e(__('Lembrar senha')); ?></span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <?php if(Route::has('password.request')): ?>
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('password.request')); ?>">
-                        <?php echo e(__('Forgot your password?')); ?>
+                        <?php echo e(__('Esqueceu a senha?')); ?>
 
                     </a>
                 <?php endif; ?>
@@ -134,7 +134,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['class' => 'ml-4']); ?>
-                    <?php echo e(__('Log in')); ?>
+                    <?php echo e(__('Entrar')); ?>
 
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
