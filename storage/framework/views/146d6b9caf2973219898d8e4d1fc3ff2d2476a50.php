@@ -190,7 +190,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('login')); ?>">
-                    <?php echo e(__('Already registered?')); ?>
+                    <?php echo e(__('Já tem registro? Entre aqui!')); ?>
 
                 </a>
 
@@ -200,7 +200,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['class' => 'ml-4']); ?>
-                    <?php echo e(__('Register')); ?>
+                    <?php echo e(__('Criar conta')); ?>
 
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
