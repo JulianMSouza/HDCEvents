@@ -23,17 +23,27 @@
             <a href="/" class="navbar-brand">
               <img src="/img/logotipo.jpg" alt="HDC Events">
             </a>
+
+            <div id='div-1'>
+              <h1> Sistema de gestão da Biblioteca Lufredina de Araújo Gaya 
+              </h1>
+
+              </div>
+
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="/" class="nav-link">Eventos</a>
+                <a href="/" class="nav-link" ><b> Eventos </b> </a>
               </li>
               <li class="nav-item">
-                <a href="/events/create" class="nav-link">Criar Eventos</a>
+                <a href="/events/create" class="nav-link"><b> Criar Eventos </b> </a>
               </li>
               <?php if(auth()->guard()->check()): ?>
               <!--Diretivas para usuário AUTENTICADO   -->
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">Meus eventos</a>
+                <a href="/dashboard" class="nav-link"><b> Meus eventos </b> </a>
+              </li>
+              <li class="nav-item">
+                <a href="/usuarios" class="nav-link"><b> Usuarios </b> </a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">
@@ -50,10 +60,10 @@
               <?php if(auth()->guard()->guest()): ?>
               <!--Diretivas para usuário Não autenticado   -->
               <li class="nav-item">
-                <a href="/login" class="nav-link">Entrar</a>
+                <a href="/login" class="nav-link"><b> Entrar </b> </a>
               </li>
               <li class="nav-item">
-                <a href="/register" class="nav-link">Cadastrar</a>
+                <a href="/register" class="nav-link"><b> Cadastrar </b> </a>
               </li>
               <?php endif; ?>
             </ul>
