@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/', [EventController::class, 'index']);
 
@@ -28,6 +29,8 @@ Route::put('/events/update/{id}', [EventController::class,'update' ])->middlewar
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/usuarios', [UsuarioController::class, 'show'])->middleware('auth');;
 
 //Aqui foi alterada o controle de view para a controller de eventos.
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
